@@ -1,10 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.projet.etudiantsController"
-            prefHeight="400.0" prefWidth="600.0">
+<AnchorPane prefHeight="749.0" prefWidth="1123.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projet.etudiantsController">
+
+    <Button fx:id="btnajouter" layoutX="40.0" layoutY="417.0" prefHeight="25.0" prefWidth="87.0" text="Ajouter" />
+   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+   <VBox layoutX="11.0" layoutY="116.0" prefHeight="297.0" prefWidth="421.0">
+      <children>
+         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Prénom:" wrappingWidth="71.13671875" />
+         <TextField fx:id="tprenom" prefHeight="8.0" prefWidth="364.0" />
+         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nom:" wrappingWidth="71.13671875" />
+         <TextField fx:id="tnom" prefHeight="8.0" prefWidth="364.0" />
+         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Date de naissance:" wrappingWidth="127.13671875" />
+         <DatePicker fx:id="tdate" prefHeight="25.0" prefWidth="426.0" />
+         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Email" wrappingWidth="71.13671875" />
+         <TextField fx:id="tmail" prefHeight="8.0" prefWidth="364.0" />
+         <CheckBox fx:id="JV" mnemonicParsing="false" prefHeight="29.0" prefWidth="73.0" text="JAVA" />
+         <CheckBox fx:id="BD" mnemonicParsing="false" prefHeight="29.0" prefWidth="133.0" text="Base de donnees" />
+         <CheckBox fx:id="PW" mnemonicParsing="false" prefHeight="29.0" prefWidth="157.0" text="Programmation Web" />
+         <CheckBox fx:id="CP" mnemonicParsing="false" prefHeight="29.0" prefWidth="133.0" text="Conception" />
+      </children>
+   </VBox>
+   <TableView fx:id="table" layoutX="8.0" layoutY="446.0" prefHeight="259.0" prefWidth="1107.0">
+     <columns>
+       <TableColumn fx:id="colid" prefWidth="97.0" text="ID" />
+       <TableColumn fx:id="colp" prefWidth="142.0" text="Prenom" />
+         <TableColumn fx:id="coln" prefWidth="152.0" text="Nom" />
+         <TableColumn minWidth="0.0" prefWidth="170.0" text="Date de naissance" />
+         <TableColumn prefWidth="244.0" text="Email" />
+         <TableColumn minWidth="0.0" prefWidth="301.0" text="Cour" />
+     </columns>
+   </TableView>
+   <Button fx:id="btnsupprimer" layoutX="233.0" layoutY="417.0" prefHeight="25.0" prefWidth="87.0" text="Supprimer" />
+   <Button fx:id="btnmodifier" layoutX="137.0" layoutY="417.0" prefHeight="25.0" prefWidth="87.0" text="Modifier" />
+   <Text layoutX="453.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Skillhub " textAlignment="CENTER" wrappingWidth="187.13671875">
+      <font>
+         <Font name="Calibri Bold Italic" size="26.0" />
+      </font>
+   </Text>
+
+
 
 </AnchorPane>
