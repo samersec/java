@@ -1,0 +1,14 @@
+
+create database skillhub;
+
+ 
+CREATE TABLE etudiants (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    Prenom VARCHAR(20) NOT NULL,
+    Nom VARCHAR(20) NOT NULL,
+    Daten VARCHAR(20) NOT NULL,
+    Mail VARCHAR(20) NOT NULL,
+    Cours VARCHAR(20) NOT NULL
+);
+
+INSERT INTO etudiants(Prenom, Nom, Daten, Mail, Cours) VALUES ('dali', 'said', '2023', 'dali@gmail.com', 'java');

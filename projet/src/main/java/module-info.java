@@ -3,6 +3,7 @@ module com.example.projet {
     requires javafx.fxml;
     requires mysql.connector.j;
     requires java.sql;
+    requires org.xerial.sqlitejdbc;
 
 
     opens com.example.projet to javafx.fxml;

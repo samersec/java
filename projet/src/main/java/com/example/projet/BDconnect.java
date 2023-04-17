@@ -1,28 +1,33 @@
 package com.example.projet;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
 
 public class BDconnect {
-    static String user = "root";
-    static String password = "";
-    static String url = "jdbc:mysql://localhost/skillhub";
-    static String driver = "com.mysql.cj.jdbc.Driver";
+    public static Connection conn=null;
 
-    public static Connection getCon(){
-        Connection con = null;
+    public static Connection getCon() {
         try {
-            Class.forName(driver);
-            try {
-                con = DriverManager.getConnection(url,user,password);
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
-            }
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
+            Class.forName("org.sqlite.JDBC");
+            String url = "jdbc:sqlite:C:/Users/GAMING/Desktop/java-main/projet/src/main/resources/new_database.db";
+            conn = DriverManager.getConnection(url);
+            return conn;
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+            return null; // or throw an exception here
         }
+    }
 
-        return con;
+    public static ResultSet executeQuery(String query) throws SQLException {
+        Statement statement = conn.createStatement();
+        return statement.executeQuery(query);
+    }
+
+    public void executeUpdate(String query) throws SQLException {
+        Statement statement = conn.createStatement();
+        statement.executeUpdate(query);
+    }
+
+    public static void close() throws SQLException {
+        conn.close();
     }
 }

@@ -1,5 +1,5 @@
 package com.example.projet;
-import java.util.Date;
+
 
 public class etudiants {
 
@@ -7,7 +7,7 @@ public class etudiants {
     private String Prenom;
     private String Nom;
 
-    private Date Date;
+    private String Daten;
 
     private String Mail;
     private String Cours;
@@ -38,12 +38,12 @@ public class etudiants {
         Nom = nom;
     }
 
-    public java.util.Date getDate() {
-        return Date;
+    public String getDaten() {
+        return Daten;
     }
 
-    public void setDate(java.util.Date date) {
-        Date = date;
+    public void setDaten(String datenn) {
+        Daten = datenn;
     }
 
     public String getMail() {
