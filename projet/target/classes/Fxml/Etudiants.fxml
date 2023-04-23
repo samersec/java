@@ -31,10 +31,10 @@
           <ComboBox fx:id="tcours" prefHeight="13.0" prefWidth="421.0">
               <items>
                   <FXCollections fx:factory="observableArrayList">
-                      <String fx:value="java" />
-                      <String fx:value="Base de donner" />
-                      <String fx:value="programmation web" />
-                      <String fx:value="conception" />
+                      <String fx:value="1" />
+                      <String fx:value="2" />
+                      <String fx:value="3" />
+                      <String fx:value="4" />
                   </FXCollections>
               </items>
           </ComboBox>
@@ -46,17 +46,19 @@
        <TableColumn fx:id="colp" prefWidth="142.0" text="Prenom" />
          <TableColumn fx:id="coln" prefWidth="152.0" text="Nom" />
          <TableColumn fx:id="cold" minWidth="0.0" prefWidth="170.0" text="Date de naissance" />
-         <TableColumn fx:id="cole" prefWidth="244.0" text="Email" />
-         <TableColumn fx:id="colc" minWidth="0.0" prefWidth="301.0" text="Cour" />
+         <TableColumn fx:id="cole" prefWidth="206.0" text="Email" />
+         <TableColumn fx:id="colc" minWidth="0.0" prefWidth="251.0" text="Cour" />
+         <TableColumn fx:id="colnote" prefWidth="88.0" text="note" />
      </columns>
    </TableView>
    <Button fx:id="btnsupprimer" layoutX="233.0" layoutY="417.0" onAction="#Supprimer" prefHeight="25.0" prefWidth="87.0" text="Supprimer" />
-   <Button fx:id="btnmodifier" layoutX="137.0" layoutY="417.0" prefHeight="25.0" prefWidth="87.0" text="Modifier" />
+   <Button fx:id="btnmodifier" layoutX="137.0" layoutY="417.0" onAction="#ModifierWindow" prefHeight="25.0" prefWidth="87.0" text="Modifier" />
    <Text layoutX="453.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Skillhub " textAlignment="CENTER" wrappingWidth="187.13671875">
       <font>
          <Font name="Calibri Bold Italic" size="26.0" />
       </font>
    </Text>
+   <Button fx:id="btnrefraichir" layoutX="1011.0" layoutY="417.0" onAction="#refraichir" prefHeight="25.0" prefWidth="87.0" text="Refraichir" />
 
 
 

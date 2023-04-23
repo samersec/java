@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="415.0" prefWidth="608.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projet.modifierController">
+   <children>
+      <VBox layoutX="14.0" layoutY="33.0" prefHeight="267.0" prefWidth="421.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="ID:" wrappingWidth="71.13671875" />
+            <TextField fx:id="tid" prefHeight="8.0" prefWidth="364.0" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nouveau Prénom:" wrappingWidth="128.13671875" />
+            <TextField fx:id="tprenom" prefHeight="8.0" prefWidth="364.0" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nouveau Nom:" wrappingWidth="136.13671875" />
+            <TextField fx:id="tnom" prefHeight="8.0" prefWidth="364.0" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nouveau Date de naissance:" wrappingWidth="160.13671875" />
+            <DatePicker fx:id="tdate" prefHeight="25.0" prefWidth="426.0" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nouveau Email" wrappingWidth="126.13671875" />
+            <TextField fx:id="tmail" prefHeight="8.0" prefWidth="364.0" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nouveau Cours" wrappingWidth="110.13671875" />
+            <ComboBox fx:id="tcours" prefHeight="13.0" prefWidth="421.0">
+               <items>
+                  <FXCollections fx:factory="observableArrayList">
+                     <String fx:value="1" />
+                     <String fx:value="2" />
+                     <String fx:value="3" />
+                     <String fx:value="4" />
+                  </FXCollections>
+               </items>
+            </ComboBox>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Note" wrappingWidth="110.13671875" />
+         </children>
+      </VBox>
+      <Button fx:id="btnmodifier" layoutX="412.0" layoutY="364.0" mnemonicParsing="false" onAction="#Modifier" prefHeight="37.0" prefWidth="87.0" text="Modifier" />
+      <Button fx:id="btnannuler" layoutX="507.0" layoutY="364.0" mnemonicParsing="false" onAction="#Annuler" prefHeight="37.0" prefWidth="87.0" text="Annuler" />
+      <TextField fx:id="tnote" layoutX="14.0" layoutY="300.0" prefHeight="25.0" prefWidth="421.0" />
+   </children>
+</AnchorPane>

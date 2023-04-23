@@ -10,7 +10,11 @@ public class etudiants {
     private String Daten;
 
     private String Mail;
-    private String Cours;
+
+    private String cours;
+
+    private int noten;
+
 
 
 
@@ -55,11 +59,19 @@ public class etudiants {
     }
 
     public String getCours() {
-        return Cours;
+        return cours;
     }
 
     public void setCours(String cours) {
-        Cours = cours;
+        this.cours = cours;
+    }
+
+    public int getNote() {
+        return noten;
+    }
+
+    public void setNote(int note) {
+        this.noten = note;
     }
 }
 
