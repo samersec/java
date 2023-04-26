@@ -13,11 +13,11 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="749.0" prefWidth="1123.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projet.etudiantsController">
+<AnchorPane prefHeight="749.0" prefWidth="1123.0" styleClass="form_container" stylesheets="@../css/test.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projet.etudiantsController">
 
-    <Button fx:id="btnajouter" layoutX="40.0" layoutY="417.0" onAction="#Ajouter" prefHeight="25.0" prefWidth="87.0" text="Ajouter" />
+    <Button fx:id="btnajouter" layoutX="40.0" layoutY="461.0" onAction="#Ajouter" prefHeight="25.0" prefWidth="87.0" text="Ajouter" />
    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-   <VBox layoutX="11.0" layoutY="116.0" prefHeight="267.0" prefWidth="421.0">
+   <VBox layoutX="13.0" layoutY="70.0" prefHeight="267.0" prefWidth="421.0">
       <children>
          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Prénom:" wrappingWidth="71.13671875" />
          <TextField fx:id="tprenom" prefHeight="8.0" prefWidth="364.0" />
@@ -40,7 +40,7 @@
           </ComboBox>
       </children>
    </VBox>
-   <TableView fx:id="table" layoutX="8.0" layoutY="446.0" prefHeight="259.0" prefWidth="1107.0">
+   <TableView fx:id="table" layoutX="8.0" layoutY="513.0" prefHeight="210.0" prefWidth="1107.0">
      <columns>
        <TableColumn fx:id="colid" prefWidth="97.0" text="ID" />
        <TableColumn fx:id="colp" prefWidth="142.0" text="Prenom" />
@@ -51,14 +51,14 @@
          <TableColumn fx:id="colnote" prefWidth="88.0" text="note" />
      </columns>
    </TableView>
-   <Button fx:id="btnsupprimer" layoutX="233.0" layoutY="417.0" onAction="#Supprimer" prefHeight="25.0" prefWidth="87.0" text="Supprimer" />
-   <Button fx:id="btnmodifier" layoutX="137.0" layoutY="417.0" onAction="#ModifierWindow" prefHeight="25.0" prefWidth="87.0" text="Modifier" />
-   <Text layoutX="453.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Skillhub " textAlignment="CENTER" wrappingWidth="187.13671875">
+   <Button fx:id="btnsupprimer" layoutX="308.0" layoutY="461.0" onAction="#Supprimer" prefHeight="25.0" prefWidth="87.0" text="Supprimer" />
+   <Button fx:id="btnmodifier" layoutX="174.0" layoutY="461.0" onAction="#ModifierWindow" prefHeight="25.0" prefWidth="87.0" text="Modifier" />
+   <Text fx:id="title" layoutX="453.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Skillhub " textAlignment="CENTER" wrappingWidth="187.13671875">
       <font>
          <Font name="Calibri Bold Italic" size="26.0" />
       </font>
    </Text>
-   <Button fx:id="btnrefraichir" layoutX="1011.0" layoutY="417.0" onAction="#refraichir" prefHeight="25.0" prefWidth="87.0" text="Refraichir" />
+   <Button fx:id="btnrefraichir" layoutX="1009.0" layoutY="461.0" onAction="#refraichir" prefHeight="25.0" prefWidth="87.0" text="Refraichir" />
 
 
 

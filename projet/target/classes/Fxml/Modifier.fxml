@@ -8,11 +8,12 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="415.0" prefWidth="608.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projet.modifierController">
+<AnchorPane prefHeight="657.0" prefWidth="681.0" styleClass="form_container" stylesheets="@../css/test.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projet.modifierController">
    <children>
-      <VBox layoutX="14.0" layoutY="33.0" prefHeight="267.0" prefWidth="421.0">
+      <VBox layoutX="14.0" layoutY="8.0" prefHeight="578.0" prefWidth="458.0">
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="ID:" wrappingWidth="71.13671875" />
             <TextField fx:id="tid" prefHeight="8.0" prefWidth="364.0" />
@@ -36,10 +37,14 @@
                </items>
             </ComboBox>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Note" wrappingWidth="110.13671875" />
+            <TextField fx:id="tnote" prefHeight="29.0" prefWidth="437.0">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </TextField>
          </children>
       </VBox>
-      <Button fx:id="btnmodifier" layoutX="412.0" layoutY="364.0" mnemonicParsing="false" onAction="#Modifier" prefHeight="37.0" prefWidth="87.0" text="Modifier" />
-      <Button fx:id="btnannuler" layoutX="507.0" layoutY="364.0" mnemonicParsing="false" onAction="#Annuler" prefHeight="37.0" prefWidth="87.0" text="Annuler" />
-      <TextField fx:id="tnote" layoutX="14.0" layoutY="300.0" prefHeight="25.0" prefWidth="421.0" />
+      <Button fx:id="btnmodifier" layoutX="457.0" layoutY="594.0" mnemonicParsing="false" onAction="#Modifier" prefHeight="37.0" prefWidth="87.0" text="Modifier" />
+      <Button fx:id="btnannuler" layoutX="567.0" layoutY="594.0" mnemonicParsing="false" onAction="#Annuler" prefHeight="37.0" prefWidth="87.0" text="Annuler" />
    </children>
 </AnchorPane>

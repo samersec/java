@@ -2,13 +2,7 @@ package com.example.projet;
 
 public class cours  {
     private int id ;
-
-
-
     private  String titre;
-
-
-
 
     public int getId() {
         return id;

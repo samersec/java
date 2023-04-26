@@ -8,7 +8,7 @@ public class BDconnect {
     public static Connection getCon() {
         try {
             Class.forName("org.sqlite.JDBC");
-            String url = "jdbc:sqlite:C:/Users/GAMING/Desktop/java-main/projet/src/main/resources/new_database.db";
+            String url = "jdbc:sqlite:C:/Users/DELL_2023/IdeaProjects/projet/src/main/resources/new_database.db";
             conn = DriverManager.getConnection(url);
             return conn;
         } catch (Exception e) {
