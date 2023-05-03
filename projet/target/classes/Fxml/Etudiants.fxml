@@ -13,20 +13,18 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="749.0" prefWidth="1123.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projet.etudiantsController">
+<AnchorPane prefHeight="749.0" prefWidth="1123.0" styleClass="form_container" stylesheets="@../css/test.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projet.etudiantsController">
 
-    <Button fx:id="btnajouter" layoutX="40.0" layoutY="417.0" onAction="#Ajouter" prefHeight="25.0" prefWidth="87.0" text="Ajouter" />
+    <Button fx:id="btnajouter" layoutX="14.0" layoutY="396.0" onAction="#Ajouter" prefHeight="25.0" prefWidth="87.0" text="Ajouter" />
    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-   <VBox layoutX="11.0" layoutY="116.0" prefHeight="267.0" prefWidth="421.0">
+   <VBox layoutX="13.0" layoutY="32.0" prefHeight="267.0" prefWidth="421.0">
       <children>
-         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Prénom:" wrappingWidth="71.13671875" />
-         <TextField fx:id="tprenom" prefHeight="8.0" prefWidth="364.0" />
          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nom:" wrappingWidth="71.13671875" />
-         <TextField fx:id="tnom" prefHeight="8.0" prefWidth="364.0" />
+         <TextField fx:id="tnom" prefHeight="33.0" prefWidth="302.0" />
          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Date de naissance:" wrappingWidth="127.13671875" />
          <DatePicker fx:id="tdate" prefHeight="25.0" prefWidth="426.0" />
          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Email" wrappingWidth="71.13671875" />
-         <TextField fx:id="tmail" prefHeight="8.0" prefWidth="364.0" />
+         <TextField fx:id="tmail" prefHeight="33.0" prefWidth="398.0" />
          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Cours" wrappingWidth="71.13671875" />
           <ComboBox fx:id="tcours" prefHeight="13.0" prefWidth="421.0">
               <items>
@@ -51,14 +49,32 @@
          <TableColumn fx:id="colnote" prefWidth="88.0" text="note" />
      </columns>
    </TableView>
-   <Button fx:id="btnsupprimer" layoutX="233.0" layoutY="417.0" onAction="#Supprimer" prefHeight="25.0" prefWidth="87.0" text="Supprimer" />
-   <Button fx:id="btnmodifier" layoutX="137.0" layoutY="417.0" onAction="#ModifierWindow" prefHeight="25.0" prefWidth="87.0" text="Modifier" />
+   <Button fx:id="btnsupprimer" layoutX="237.0" layoutY="396.0" onAction="#Supprimer" prefHeight="34.0" prefWidth="120.0" text="Supprimer" />
+   <Button fx:id="btnmodifier" layoutX="124.0" layoutY="396.0" onAction="#ModifierWindow" prefHeight="25.0" prefWidth="87.0" text="Modifier" />
    <Text layoutX="453.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Skillhub " textAlignment="CENTER" wrappingWidth="187.13671875">
       <font>
          <Font name="Calibri Bold Italic" size="26.0" />
       </font>
    </Text>
-   <Button fx:id="btnrefraichir" layoutX="1011.0" layoutY="417.0" onAction="#refraichir" prefHeight="25.0" prefWidth="87.0" text="Refraichir" />
+   <Button fx:id="btnrefraichir" layoutX="983.0" layoutY="396.0" onAction="#showEtudiants" prefHeight="34.0" prefWidth="109.0" text="Refraichir" />
+   <Button fx:id="search" layoutX="374.0" layoutY="396.0" onAction="#recherche" prefHeight="34.0" prefWidth="120.0" text="Recherche" />
+   <TextField fx:id="recherche" layoutX="512.0" layoutY="396.0" prefHeight="34.0" prefWidth="233.0" />
+   <DatePicker fx:id="recherchedate" layoutX="771.0" layoutY="396.0" onAction="#recherchedate" prefHeight="34.0" prefWidth="187.0" />
+   <Button fx:id="btnstat" layoutX="507.0" layoutY="705.0" onAction="#statwindow" prefHeight="34.0" prefWidth="109.0" text="Statistique" />
+   <Text layoutX="574.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cours" wrappingWidth="71.13671875" />
+   <ComboBox fx:id="tcours2" layoutX="574.0" layoutY="175.0" prefHeight="13.0" prefWidth="421.0">
+      <items>
+         <FXCollections fx:factory="observableArrayList">
+            <String fx:value="1" />
+            <String fx:value="2" />
+            <String fx:value="3" />
+            <String fx:value="4" />
+         </FXCollections>
+      </items>
+   </ComboBox>
+   <Text layoutX="576.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID:" wrappingWidth="71.13671875" />
+   <TextField fx:id="tid" layoutX="576.0" layoutY="91.0" prefHeight="25.0" prefWidth="421.0" />
+   <Button fx:id="btnajouter1" layoutX="741.0" layoutY="247.0" onAction="#AjouterCours" prefHeight="25.0" prefWidth="87.0" text="Ajouter" />
 
 
 

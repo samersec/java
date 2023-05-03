@@ -22,10 +22,6 @@ public class BDconnect {
         return statement.executeQuery(query);
     }
 
-    public void executeUpdate(String query) throws SQLException {
-        Statement statement = conn.createStatement();
-        statement.executeUpdate(query);
-    }
 
     public static void close() throws SQLException {
         conn.close();

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="605.0" prefWidth="984.0" stylesheets="@../css/test.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projet.statController">
+   <children>
+      <TableView fx:id="tableJava" prefHeight="715.0" prefWidth="258.0">
+         <columns>
+            <TableColumn fx:id="colj" minWidth="0.0" prefWidth="257.0" text="Java" />
+         </columns>
+      </TableView>
+      <TableView fx:id="tableWeb" layoutX="258.0" prefHeight="715.0" prefWidth="218.0">
+        <columns>
+          <TableColumn fx:id="colw" prefWidth="217.0" text="Progweb" />
+        </columns>
+      </TableView>
+      <TableView fx:id="tableBD" layoutX="474.0" prefHeight="715.0" prefWidth="248.0">
+         <columns>
+            <TableColumn fx:id="colb" minWidth="0.0" prefWidth="247.0" text="BD" />
+         </columns>
+      </TableView>
+      <TableView fx:id="tableConception" layoutX="720.0" prefHeight="715.0" prefWidth="264.0">
+         <columns>
+            <TableColumn fx:id="colc" prefWidth="263.0" text="Conception" />
+         </columns>
+      </TableView>
+   </children>
+</AnchorPane>

@@ -40,9 +40,9 @@ public class etudiantsController implements Initializable {
     public void Ajouter(ActionEvent event) throws SQLException {
         if (tnom.getText().isEmpty() || tprenom.getText().isEmpty() || tmail.getText().isEmpty() || tcours.getValue() == null || tdate.getValue() == null) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
-            alert.setHeaderText("Required fields are empty");
-            alert.setContentText("Please fill all the required fields.");
+            alert.setTitle("Erreur");
+            alert.setHeaderText("information requise");
+            alert.setContentText("remplissez toute les informations pour ajouter un Etudiants.");
             alert.showAndWait();
         }
         else {
@@ -81,6 +81,31 @@ public class etudiantsController implements Initializable {
             stmt2.executeUpdate();
         }
         showEtudiants();
+    }
+    @FXML
+    public void AjouterCours(ActionEvent event) throws SQLException
+    {
+        if (tid.getText().isEmpty() ||  tcours2.getValue() == null ) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Erreurr");
+            alert.setHeaderText("information requise");
+            alert.setContentText("il faut donner l'id de l'Etudiant et le cours a ajouter.");
+            alert.showAndWait();
+        }else {
+            String id = tid.getText();
+            String cours = tcours2.getValue().toString();
+            etudiants etud = new etudiants();
+            etud.setId(Integer.parseInt(id));
+            etud.setCours(cours);
+            Connection con = BDconnect.getCon();
+            PreparedStatement stmt3 = con.prepareStatement("INSERT INTO inscription (id_etudiants, id_cours) VALUES (?, ?)");
+            stmt3.setInt(1, etud.getId());
+            stmt3.setInt(2, Integer.parseInt(etud.getCours()));
+            stmt3.executeUpdate();
+
+        }
+        showEtudiants();
+
     }
 
     //*****************************************************************//
@@ -140,14 +165,29 @@ public class etudiantsController implements Initializable {
 
 
     @FXML
-    void refraichir(ActionEvent event) {
+    void statwindow(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/Fxml/Stat.fxml"));
+        Stage newStage = new Stage();
+        newStage.setScene(new Scene(root));
+        newStage.show();
 
-showEtudiants();
 
     }
 
     @FXML
+    private Button btnstat;
+
+
+    @FXML
+    private TextField tid;
+
+    @FXML
+    private ComboBox<?> tcours2;
+
+    @FXML
     private ComboBox<?> tcours;
+    @FXML
+    private DatePicker recherchedate;
 
     @FXML
     private TableColumn<etudiants, Integer> colid;
@@ -168,7 +208,11 @@ showEtudiants();
     @FXML
     private TableColumn<etudiants, Integer> colnote;
 
+    @FXML
+    private TextField recherche;
 
+    @FXML
+    private Button search;
 
 
     @FXML
@@ -186,12 +230,64 @@ showEtudiants();
     @FXML
     private TextField tprenom;
 
+
+
+
+    @FXML
+    void recherche(ActionEvent event) {
+        String searchText = recherche.getText().trim();
+
+        if (searchText.isEmpty()) {
+            table.setItems(getEtudiants());
+            return;
+        }
+
+        ObservableList<etudiants> filteredList = FXCollections.observableArrayList();
+        for (etudiants et : getEtudiants()) {
+            if (
+                    String.valueOf(et.getId()).contains(searchText)
+                            || et.getPrenom().toLowerCase().contains(searchText.toLowerCase())
+                             || et.getNom().toLowerCase().contains(searchText.toLowerCase())
+
+                              || et.getMail().toLowerCase().contains(searchText.toLowerCase())
+                              || et.getCours().toLowerCase().contains(searchText.toLowerCase())
+                               || String.valueOf(et.getNote()).contains(searchText)) {
+                filteredList.add(et);
+            }
+        }
+
+        table.setItems(filteredList);
+    }
+    @FXML
+    void recherchedate(ActionEvent event) {
+        String searchText = String.valueOf(recherchedate.getValue());
+
+        if (searchText.isEmpty()) {
+            table.setItems(getEtudiants());
+            return;
+        }
+
+        ObservableList<etudiants> filteredList = FXCollections.observableArrayList();
+        for (etudiants et : getEtudiants()) {
+            if (
+
+                             et.getDaten().toLowerCase().contains(searchText.toLowerCase())
+
+                            ) {
+                filteredList.add(et);
+            }
+        }
+
+        table.setItems(filteredList);
+    }
     public ObservableList<etudiants> getEtudiants() {
         ObservableList<etudiants> etudiants = FXCollections.observableArrayList();
         String query = " SELECT etudiants.id, nom, prenom, daten, mail, titre, note\n" +
                 "FROM etudiants \n" +
                 "LEFT JOIN inscription ON etudiants.id = inscription.id_etudiants\n" +
                 "LEFT JOIN cours ON inscription.id_cours = cours.id;";
+         /*select etudiants.id,nom,prenom,daten,mail,titre,note from etudiants , inscription,cours where etudiants.id=inscription.id_etudiants and inscription.id_cours=cours.id;*/
+
         BDconnect.getCon();
         try {
 
